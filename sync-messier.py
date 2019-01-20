@@ -44,7 +44,7 @@ for tr in soup.find(id='Messier_objects').parent.findNext('table', {'class': 'wi
 
 output_path: str = os.path.join(OUTPUT_DIR, 'messier-objects.csv')
 with open(output_path, 'w', newline='\n', encoding=ENCODING) as output_stream:
-  writer: csv.writer = csv.writer(output_stream, delimiter=' ', lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
+  writer: csv.writer = csv.writer(output_stream, delimiter=';', lineterminator='\n', quoting=csv.QUOTE_ALL)
   writer.writerow(('Messier number', 'NGC/IC', 'Common name', 'Picture', 'Object Type', 'Distance(kly)', 'Constellation', 'Apparent magnitude', 'Right ascension', 'Declination'))
   for datum in objects:
     writer.writerow(datum)
