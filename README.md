@@ -5,5 +5,11 @@ Charles Messier was a French astronomer most notable for publishing an astronomi
 ### Data Source
 The data is sourced from [Wikipedia](https://en.wikipedia.org/wiki/List_of_Messier_objects#Messier_objects)
 
-### Loading the Data
+### Loading Data
 
+$ git clone https://github.com/jbcurtin/messier-catalogue.git
+$ cd $HOME/messier-catalogue
+$ virtualenv -p $(which python3) env
+$ source env/bin/activate
+$ pip install pandas requests
+$ python load-data.py
